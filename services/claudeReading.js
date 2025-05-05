@@ -2,12 +2,13 @@
 const axios = require('axios');
 
 // Claude API integration for IELTS Reading tasks
+const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 
 // Generate short reading text (Text 1)
 const generateReadingText1 = async () => {
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
@@ -57,7 +58,7 @@ Keep the language level appropriate for IELTS General Training Section 1 - this 
 const generateReadingText2 = async () => {
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+       ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 2000,
@@ -204,7 +205,7 @@ Your assessment should be fair, constructive, and specific. Focus on helping the
   
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
