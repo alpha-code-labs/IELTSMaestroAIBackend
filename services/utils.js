@@ -1,12 +1,12 @@
 // Utility functions for the IELTS API
 
 // Constants
-const SSE_HEADERS = {
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    'Connection': 'keep-alive',
-    'Access-Control-Allow-Origin': '*'
-  };
+// const SSE_HEADERS = {
+//     'Content-Type': 'text/event-stream',
+//     'Cache-Control': 'no-cache',
+//     'Connection': 'keep-alive',
+//     'Access-Control-Allow-Origin': '*'
+//   };
   
   // Fallback graph data for when Claude API fails
   const createFallbackGraph = () => {
@@ -89,7 +89,7 @@ const SSE_HEADERS = {
   };
   
   module.exports = {
-    SSE_HEADERS,
+    // SSE_HEADERS,
     createFallbackGraph,
     handleSectionAttempt
   };
