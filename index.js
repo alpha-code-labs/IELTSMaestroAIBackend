@@ -21,7 +21,14 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://www.ieltsmaestroai.com',
+    'https://ieltsmaestroaibackend-c4cahudndabvbgdw.centralindia-01.azurewebsites.net'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // Connect to MongoDB
 connectDB();
