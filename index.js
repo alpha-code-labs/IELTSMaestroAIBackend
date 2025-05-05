@@ -10,9 +10,16 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 
 // Handle uncaught exceptions to prevent crashes
+// In your index.js file
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught Exception:', error);
-  // Don't exit the process so Azure can restart it
+  if (error.message && error.message.includes('pathToRegexpError')) {
+    console.error('Path-to-regexp error:', error.message);
+    console.error('Stack trace:', error.stack);
+    // Don't exit the process so Azure can restart it
+  } else {
+    console.error('Uncaught Exception:', error);
+    // Don't exit the process
+  }
 });
 
 process.on('unhandledRejection', (reason, promise) => {
