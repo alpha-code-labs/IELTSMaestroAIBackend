@@ -137,7 +137,7 @@ console.log("I finished register routes")
 
 // Add CORS preflight AFTER route registration to avoid path-to-regexp issues
 console.log("I am about to options cors")
-app.options('*', cors());
+app.options('\\*', cors());
 console.log("I finished options cors")
 
 console.log("I am about to log middleware")
