@@ -2,12 +2,13 @@ const axios = require('axios');
 const { createFallbackGraph } = require('./utils');
 
 // Claude API integration for IELTS tasks
+const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 
 // Task 1 writing prompts
 const generateWritingTask1 = async () => {
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
@@ -79,7 +80,7 @@ The assignment should describe the chart and ask the student to summarize the ma
 const generateWritingTask2 = async () => {
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1000,
@@ -381,7 +382,7 @@ const assessWritingSubmission = async (assignment, userResponse, taskType) => {
   
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
