@@ -62,15 +62,7 @@ console.log("I am about to express and json")
 app.use(express.json());
 console.log("I finished express and json")
 
-
-// Add request logging middleware
-// Enable CORS preflight for all routes
-console.log("I am about to options cors")
-app.options('*', cors());
-console.log("I finished options cors")
-
-
-// CORS configuration
+// CORS configuration - simpler approach without wildcard
 console.log("I am about to use cors")
 app.use(cors({
   origin: [
@@ -142,6 +134,11 @@ app.use('/api', readingRoutes);
 app.use('/api', listeningRoutes);
 app.use('/api', subscriptionRoutes);
 console.log("I finished register routes")
+
+// Add CORS preflight AFTER route registration to avoid path-to-regexp issues
+console.log("I am about to options cors")
+app.options('*', cors());
+console.log("I finished options cors")
 
 console.log("I am about to log middleware")
 app.use((req, res, next) => {
