@@ -1,3 +1,10 @@
+console.log('Starting server application...');
+console.log('Environment variables check:');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('MongoDB URI exists:', !!process.env.MONGODB_URI);
+console.log('Anthropic key exists:', !!process.env.ANTHROPIC_API_KEY);
+
+
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
