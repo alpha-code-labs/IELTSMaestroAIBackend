@@ -2,12 +2,13 @@
 const axios = require('axios');
 
 // Claude API integration for IELTS Listening tasks
+const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
 
 // Generate Listening Part 1 (conversation in a social context)
 const generateListeningPart1 = async () => {
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
@@ -55,7 +56,7 @@ Keep the language natural but clear, as it would be spoken by native English spe
 const generateListeningPart2 = async () => {
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
@@ -197,7 +198,7 @@ Your assessment should be fair, constructive, and specific. Focus on helping the
   
   try {
     const response = await axios.post(
-      'https://api.anthropic.com/v1/messages',
+      ANTHROPIC_API_URL,
       {
         model: 'claude-3-opus-20240229',
         max_tokens: 1500,
