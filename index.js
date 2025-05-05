@@ -24,9 +24,10 @@ app.use(express.json());
 app.use(cors({
   origin: [
     'https://www.ieltsmaestroai.com',
-    'https://ieltsmaestroaibackend-c4cahudndabvbgdw.centralindia-01.azurewebsites.net'
+    'https://icy-plant-066ddc000.6.azurestaticapps.net',
+    'http://localhost:3000'
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
   credentials: true
 }));
 
